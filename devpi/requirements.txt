@@ -1,1 +1,2 @@
 devpi-server==4.2.1
+devpi-client==3.0.0

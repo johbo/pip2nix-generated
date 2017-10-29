@@ -45,6 +45,7 @@ let
       name = "devpi-env";
       propagatedBuildInputs = with self; [
           devpi-server
+          devpi-client
       ];
     };
   };

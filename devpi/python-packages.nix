@@ -74,6 +74,26 @@ self: super: {
       sha256 = "1bpalpia6r5x1kknbk11p1fzph56fmmnp405ds8icksd3knr5aw4";
     };
   };
+  check-manifest = super.buildPythonPackage {
+    name = "check-manifest-0.35";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/10/f2/7f397f3f7d088b0720dc3e19cf5bde15baa489c9054a0d09793ededd2c07/check-manifest-0.35.tar.gz";
+      sha256 = "0jplr4i1pkdvrfhpcpd3aawgfcbd7f80yxpskc09268z0yka7dzr";
+    };
+  };
+  devpi-client = super.buildPythonPackage {
+    name = "devpi-client-3.0.0";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [tox devpi-common pkginfo check-manifest py];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/5e/4f/f50f676c212613387693e68dc60bfb04acaf799f0ddba109da8330d1e4c7/devpi-client-3.0.0.tar.gz";
+      sha256 = "0lf19iadk5bnph7avlnyhlbgyvcs11a49zl32gjn22njrdq0wl97";
+    };
+  };
   devpi-common = super.buildPythonPackage {
     name = "devpi-common-3.1.0";
     buildInputs = with self; [];
@@ -142,6 +162,16 @@ self: super: {
     src = fetchurl {
       url = "https://pypi.python.org/packages/25/4b/6fbfc66aabb3017cd8c3bd97b37f769d7503ead2899bf76e570eb91270de/passlib-1.7.1.tar.gz";
       sha256 = "1q2khqpj9rlcgdmkypjdq1kswvhjf72bq0zk2cv669cc2dj8z51x";
+    };
+  };
+  pkginfo = super.buildPythonPackage {
+    name = "pkginfo-1.4.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/58/54/57f7c5638fecdf232a5b6b767da467b0ff31467d7f86a7364c252acf2321/pkginfo-1.4.1.tar.gz";
+      sha256 = "17pqjfpq3c6xzdmk8pski6jcjgjv78q00zjf2bgzb668pzm6l6mv";
     };
   };
   plaster = super.buildPythonPackage {
@@ -244,6 +274,16 @@ self: super: {
       sha256 = "1scqzwc51c875z23phj48gircqjgnn3af8zy2izjwmnlxrxsgs3h";
     };
   };
+  tox = super.buildPythonPackage {
+    name = "tox-2.9.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [py pluggy six virtualenv];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/a7/36/e61f5263491a179311c4eaf40cf7c7bfd3aec9087687da25a1d900cc089a/tox-2.9.1.tar.gz";
+      sha256 = "1f7l0ppmqpx705bqay5bq1cc3zzlyhh3nz8nrdg8rh66c72mwbvm";
+    };
+  };
   translationstring = super.buildPythonPackage {
     name = "translationstring-1.3";
     buildInputs = with self; [];
@@ -272,6 +312,16 @@ self: super: {
     src = fetchurl {
       url = "https://pypi.python.org/packages/38/24/b4b470ab9e0a2e2e9b9030c7735828c8934b4c6b45befd1bb713ec2aeb2d/venusian-1.1.0.tar.gz";
       sha256 = "0zapz131686qm0gazwy8bh11vr57pr89jbwbl50s528sqy9f80lr";
+    };
+  };
+  virtualenv = super.buildPythonPackage {
+    name = "virtualenv-15.1.0";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/d4/0c/9840c08189e030873387a73b90ada981885010dd9aea134d6de30cd24cb8/virtualenv-15.1.0.tar.gz";
+      sha256 = "0fn9vf5fqwair5g2wra1fm18mb0xkn8y3vbdxsrh7frn4hn11y02";
     };
   };
   waitress = super.buildPythonPackage {
