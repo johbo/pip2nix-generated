@@ -5,21 +5,13 @@
 
 self: super: {
 
-  # Example adjustment for lxml: It needs a few C libraries
-  #
-  # lxml = super.lxml.override (attrs: {
-  #   buildInputs = with self; [
-  #     pkgs.libxml2
-  #     pkgs.libxslt
-  #   ];
-  # });
-
   cffi = super.cffi.override (attrs: {
     propagatedBuildInputs = attrs.propagatedBuildInputs ++ [
       pkgs.libffi
     ];
   });
 
+  # Avoid infinite recursion due to setuptools
   inherit (basePythonPackages)
     setuptools;
 }
