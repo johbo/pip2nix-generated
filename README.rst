@@ -28,15 +28,41 @@ Example to spin up a shell with `devpi-server` being available::
 Updates
 =======
 
-You'll need `pip2nix` available, currently it's best to look at it's repository
-and go from there:
+Some tools are needed to make updates a bit easier to handle, e.g. to update
+some packages in the requirements lists or to generate the nix expressions
+again.
 
-https://github.com/johbo/pip2nix
+After running `nix-shell` in the root folder, the following tools are
+available::
 
-Usually inside of a directory, there is a `pip2nix.ini`, so that you can just
-run the following command::
+`pip-compile`
+    Allows to "compile" a `requirements.in` into a `requirements.txt`,
+    so that every requirement is pinned to an exact version.
 
+    This does help in the process when specific tweaks are needed and one wants
+    to avoid that `pip2nix` would update too many things.
+
+`pip2nix`
+    This will pick up the `requirements.txt` and generate a bunch of Nix code
+    which can be used as a layer to build the Python packages.
+
+
+Example for `devpi`
+-------------------
+
+Start in the root folder of this repository::
+
+  $ nix-shell
+
+Once inside of the shell, change into the `devpi` directory and let the tools
+work for you::
+
+  $ pip-compile
   $ pip2nix generate
+
+
+Note that `pip-compile` depends on a file `requirements.in` being there and
+`pip2nix` depends on a configuration file `pip2nix.ini` being present.
 
 
 
