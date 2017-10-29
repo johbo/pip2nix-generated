@@ -4,46 +4,6 @@
 { pkgs, fetchurl, fetchgit, fetchhg }:
 
 self: super: {
-  Chameleon = super.buildPythonPackage {
-    name = "Chameleon-3.2";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/21/79/e573a9c214ea77824c08f2819694644e3d0e5a31d0149d4388489504295e/Chameleon-3.2.tar.gz";
-      sha256 = "1p30psf9pxms2j6l8hdcsw6mwj8dwgcyb3glvv4hb7v4wkylc8gd";
-    };
-  };
-  PasteDeploy = super.buildPythonPackage {
-    name = "PasteDeploy-1.5.2";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/0f/90/8e20cdae206c543ea10793cbf4136eb9a8b3f417e04e40a29d72d9922cbd/PasteDeploy-1.5.2.tar.gz";
-      sha256 = "1jz3m4hq8v6hyhfjz9425nd3nvn52cvbfipdcd72krjmla4qz1fm";
-    };
-  };
-  WebOb = super.buildPythonPackage {
-    name = "WebOb-1.7.3";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/46/87/2f96d8d43b2078fae6e1d33fa86b95c228cebed060f4e3c7576cc44ea83b/WebOb-1.7.3.tar.gz";
-      sha256 = "10vjp2rvqiyvw157fk3sy7yds1gknzw97z4gk0qv1raskx5s2p76";
-    };
-  };
-  Whoosh = super.buildPythonPackage {
-    name = "Whoosh-2.7.4";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/25/2b/6beed2107b148edc1321da0d489afc4617b9ed317ef7b72d4993cad9b684/Whoosh-2.7.4.tar.gz";
-      sha256 = "10qsqdjpbc85fykc1vgcs8xwbgn4l2l52c8d83xf1q59pwyn79bw";
-    };
-  };
   apipkg = super.buildPythonPackage {
     name = "apipkg-1.4";
     buildInputs = with self; [];
@@ -102,6 +62,16 @@ self: super: {
     src = fetchurl {
       url = "https://pypi.python.org/packages/c9/70/89b68b6600d479034276fed316e14b9107d50a62f5627da37fafe083fde3/cffi-1.11.2.tar.gz";
       sha256 = "19h0wwz9cww74gw8cyq0izj8zkhjyzjw2d3ks1c3f1y4q28xv1xb";
+    };
+  };
+  chameleon = super.buildPythonPackage {
+    name = "chameleon-3.2";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/21/79/e573a9c214ea77824c08f2819694644e3d0e5a31d0149d4388489504295e/Chameleon-3.2.tar.gz";
+      sha256 = "1p30psf9pxms2j6l8hdcsw6mwj8dwgcyb3glvv4hb7v4wkylc8gd";
     };
   };
   chardet = super.buildPythonPackage {
@@ -168,7 +138,7 @@ self: super: {
     name = "devpi-web-3.2.0";
     buildInputs = with self; [];
     doCheck = false;
-    propagatedBuildInputs = with self; [Whoosh beautifulsoup4 defusedxml devpi-server devpi-common docutils pygments pyramid pyramid-chameleon readme-renderer];
+    propagatedBuildInputs = with self; [whoosh beautifulsoup4 defusedxml devpi-server devpi-common docutils pygments pyramid pyramid-chameleon readme-renderer];
     src = fetchurl {
       url = "https://pypi.python.org/packages/f9/72/7c0f7634f99c32e28af2ecc393a62391d7ec2802a228b71e91d9d1ac0834/devpi-web-3.2.0.tar.gz";
       sha256 = "1w10sshdaqjyj8n5smjdiwsj70g2f72klxrqi5qrn1zqs8sls1ya";
@@ -244,6 +214,16 @@ self: super: {
       sha256 = "1q2khqpj9rlcgdmkypjdq1kswvhjf72bq0zk2cv669cc2dj8z51x";
     };
   };
+  pastedeploy = super.buildPythonPackage {
+    name = "pastedeploy-1.5.2";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/0f/90/8e20cdae206c543ea10793cbf4136eb9a8b3f417e04e40a29d72d9922cbd/PasteDeploy-1.5.2.tar.gz";
+      sha256 = "1jz3m4hq8v6hyhfjz9425nd3nvn52cvbfipdcd72krjmla4qz1fm";
+    };
+  };
   pkginfo = super.buildPythonPackage {
     name = "pkginfo-1.4.1";
     buildInputs = with self; [];
@@ -268,7 +248,7 @@ self: super: {
     name = "plaster-pastedeploy-0.4.1";
     buildInputs = with self; [];
     doCheck = false;
-    propagatedBuildInputs = with self; [PasteDeploy plaster];
+    propagatedBuildInputs = with self; [pastedeploy plaster];
     src = fetchurl {
       url = "https://pypi.python.org/packages/9d/6e/f8be01ed41c94e6c54ac97cf2eb142a702aae0c8cce31c846f785e525b40/plaster_pastedeploy-0.4.1.tar.gz";
       sha256 = "1lrbkya5birfmg9gnfcnsa9id28klmjcqbm33rcg69pv9sfld4jv";
@@ -318,7 +298,7 @@ self: super: {
     name = "pyramid-1.9.1";
     buildInputs = with self; [];
     doCheck = false;
-    propagatedBuildInputs = with self; [setuptools WebOb repoze.lru zope.interface zope.deprecation venusian translationstring PasteDeploy plaster plaster-pastedeploy hupper];
+    propagatedBuildInputs = with self; [setuptools webob repoze.lru zope.interface zope.deprecation venusian translationstring pastedeploy plaster plaster-pastedeploy hupper];
     src = fetchurl {
       url = "https://pypi.python.org/packages/9a/57/73447be9e7d0512d601e3f0a1fb9d7d1efb941911f49efdfe036d2826507/pyramid-1.9.1.tar.gz";
       sha256 = "0dhbzc4q0vsnv3aihy728aczg56xs6h9s1rmvr096q4lb6yln3w4";
@@ -328,7 +308,7 @@ self: super: {
     name = "pyramid-chameleon-0.3";
     buildInputs = with self; [];
     doCheck = false;
-    propagatedBuildInputs = with self; [pyramid Chameleon];
+    propagatedBuildInputs = with self; [pyramid chameleon];
     src = fetchurl {
       url = "https://pypi.python.org/packages/8a/cd/ae2f1f2c547884bc6fa16aa607d21f8e85a0b7997b0ba6426e35212b1e2d/pyramid_chameleon-0.3.tar.gz";
       sha256 = "05whxy6081cygg8vpkm5m6glil3v9ardjjxlcmw5s0gba0m7jxni";
@@ -452,6 +432,26 @@ self: super: {
     src = fetchurl {
       url = "https://pypi.python.org/packages/0b/02/ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47/webencodings-0.5.1.tar.gz";
       sha256 = "08qrgrc4hrximb2gqnl69g01s93rhf2842jfxdjljc1dbwj1qsmk";
+    };
+  };
+  webob = super.buildPythonPackage {
+    name = "webob-1.7.3";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/46/87/2f96d8d43b2078fae6e1d33fa86b95c228cebed060f4e3c7576cc44ea83b/WebOb-1.7.3.tar.gz";
+      sha256 = "10vjp2rvqiyvw157fk3sy7yds1gknzw97z4gk0qv1raskx5s2p76";
+    };
+  };
+  whoosh = super.buildPythonPackage {
+    name = "whoosh-2.7.4";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/25/2b/6beed2107b148edc1321da0d489afc4617b9ed317ef7b72d4993cad9b684/Whoosh-2.7.4.tar.gz";
+      sha256 = "10qsqdjpbc85fykc1vgcs8xwbgn4l2l52c8d83xf1q59pwyn79bw";
     };
   };
   zope.deprecation = super.buildPythonPackage {
