@@ -70,3 +70,9 @@ Contact
 =======
 
 Johannes Bornhold, details via https://www.johbo.com
+
+
+.. Links
+
+
+.. _Nix manual: https://nixos.org/nix/manual
