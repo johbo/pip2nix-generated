@@ -46,6 +46,7 @@ let
       propagatedBuildInputs = with self; [
           devpi-server
           devpi-client
+          devpi-web
       ];
     };
   };

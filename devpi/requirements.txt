@@ -1,2 +1,3 @@
 devpi-server==4.2.1
 devpi-client==3.0.0
+devpi-web==3.2.0

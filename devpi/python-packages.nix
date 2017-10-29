@@ -4,6 +4,16 @@
 { pkgs, fetchurl, fetchgit, fetchhg }:
 
 self: super: {
+  Chameleon = super.buildPythonPackage {
+    name = "Chameleon-3.2";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/21/79/e573a9c214ea77824c08f2819694644e3d0e5a31d0149d4388489504295e/Chameleon-3.2.tar.gz";
+      sha256 = "1p30psf9pxms2j6l8hdcsw6mwj8dwgcyb3glvv4hb7v4wkylc8gd";
+    };
+  };
   PasteDeploy = super.buildPythonPackage {
     name = "PasteDeploy-1.5.2";
     buildInputs = with self; [];
@@ -24,6 +34,16 @@ self: super: {
       sha256 = "10vjp2rvqiyvw157fk3sy7yds1gknzw97z4gk0qv1raskx5s2p76";
     };
   };
+  Whoosh = super.buildPythonPackage {
+    name = "Whoosh-2.7.4";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/25/2b/6beed2107b148edc1321da0d489afc4617b9ed317ef7b72d4993cad9b684/Whoosh-2.7.4.tar.gz";
+      sha256 = "10qsqdjpbc85fykc1vgcs8xwbgn4l2l52c8d83xf1q59pwyn79bw";
+    };
+  };
   apipkg = super.buildPythonPackage {
     name = "apipkg-1.4";
     buildInputs = with self; [];
@@ -42,6 +62,26 @@ self: super: {
     src = fetchurl {
       url = "https://pypi.python.org/packages/7e/96/5c3abeab8b852ac172210392137c04770b0c85cd086823c5760226b23a36/argon2_cffi-16.3.0.tar.gz";
       sha256 = "1ap3il3j1pjyprrhpfyhc21izpmhzhfb5s69vlzc65zvd1nj99cr";
+    };
+  };
+  beautifulsoup4 = super.buildPythonPackage {
+    name = "beautifulsoup4-4.6.0";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/fa/8d/1d14391fdaed5abada4e0f63543fef49b8331a34ca60c88bd521bcf7f782/beautifulsoup4-4.6.0.tar.gz";
+      sha256 = "12cf0ygpz9srpfh9gx2f9ba0swa1rzypv3sm4r0hmjyw6b4nm2w0";
+    };
+  };
+  bleach = super.buildPythonPackage {
+    name = "bleach-2.1.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [six html5lib];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/d4/3f/d517089af35b01bb9bc4eac5ea04bae342b37a5e9abbb27b7c3ce0eae070/bleach-2.1.1.tar.gz";
+      sha256 = "03gaynhzq15rswv057f327rycy2k4z38v92f1y5gp01101l962kn";
     };
   };
   certifi = super.buildPythonPackage {
@@ -84,6 +124,16 @@ self: super: {
       sha256 = "0jplr4i1pkdvrfhpcpd3aawgfcbd7f80yxpskc09268z0yka7dzr";
     };
   };
+  defusedxml = super.buildPythonPackage {
+    name = "defusedxml-0.5.0";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/74/ba/4ba4e89e21b5a2e267d80736ea674609a0a33cc4435a6d748ef04f1f9374/defusedxml-0.5.0.tar.gz";
+      sha256 = "1x54n0h8hl92vvwyymx883fbqpqjwn2mc8fb383bcg3z9zwz5mr4";
+    };
+  };
   devpi-client = super.buildPythonPackage {
     name = "devpi-client-3.0.0";
     buildInputs = with self; [];
@@ -114,6 +164,26 @@ self: super: {
       sha256 = "0rmb1ypk8bn42d0gmc4hw1r83yaqcn4ypzy0qfj4annnj9qskkvw";
     };
   };
+  devpi-web = super.buildPythonPackage {
+    name = "devpi-web-3.2.0";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [Whoosh beautifulsoup4 defusedxml devpi-server devpi-common docutils pygments pyramid pyramid-chameleon readme-renderer];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/f9/72/7c0f7634f99c32e28af2ecc393a62391d7ec2802a228b71e91d9d1ac0834/devpi-web-3.2.0.tar.gz";
+      sha256 = "1w10sshdaqjyj8n5smjdiwsj70g2f72klxrqi5qrn1zqs8sls1ya";
+    };
+  };
+  docutils = super.buildPythonPackage {
+    name = "docutils-0.14";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/84/f4/5771e41fdf52aabebbadecc9381d11dea0fa34e4759b4071244fa094804c/docutils-0.14.tar.gz";
+      sha256 = "0x22fs3pdmr42kvz6c654756wja305qv6cx1zbhwlagvxgr4xrji";
+    };
+  };
   execnet = super.buildPythonPackage {
     name = "execnet-1.5.0";
     buildInputs = with self; [];
@@ -122,6 +192,16 @@ self: super: {
     src = fetchurl {
       url = "https://pypi.python.org/packages/ab/c0/9496c35092eac2523ee8993ca3690b2d0aa95ef56623035b9c890745ac55/execnet-1.5.0.tar.gz";
       sha256 = "0shzcpp20lxvh8di78giazgbjwwxgh98yli9lf39223sl1glva57";
+    };
+  };
+  html5lib = super.buildPythonPackage {
+    name = "html5lib-1.0b10";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [six webencodings setuptools];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/97/16/982214624095c1420c75f3bd295d9e658794aafb95fc075823de107e0ae4/html5lib-1.0b10.tar.gz";
+      sha256 = "1yd068a5c00wd0ajq0hqimv7fd82lhrw0w3s01vbhy9bbd6xapqd";
     };
   };
   hupper = super.buildPythonPackage {
@@ -224,6 +304,16 @@ self: super: {
       sha256 = "09mjyw82ibqzl449g7swy8bfxnfpmas0815d2rkdjlcqw81wma4r";
     };
   };
+  pygments = super.buildPythonPackage {
+    name = "pygments-2.2.0";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/71/2a/2e4e77803a8bd6408a2903340ac498cb0a2181811af7c9ec92cb70b0308a/Pygments-2.2.0.tar.gz";
+      sha256 = "1k78qdvir1yb1c634nkv6rbga8wv4289xarghmsbbvzhvr311bnv";
+    };
+  };
   pyramid = super.buildPythonPackage {
     name = "pyramid-1.9.1";
     buildInputs = with self; [];
@@ -232,6 +322,26 @@ self: super: {
     src = fetchurl {
       url = "https://pypi.python.org/packages/9a/57/73447be9e7d0512d601e3f0a1fb9d7d1efb941911f49efdfe036d2826507/pyramid-1.9.1.tar.gz";
       sha256 = "0dhbzc4q0vsnv3aihy728aczg56xs6h9s1rmvr096q4lb6yln3w4";
+    };
+  };
+  pyramid-chameleon = super.buildPythonPackage {
+    name = "pyramid-chameleon-0.3";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [pyramid Chameleon];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/8a/cd/ae2f1f2c547884bc6fa16aa607d21f8e85a0b7997b0ba6426e35212b1e2d/pyramid_chameleon-0.3.tar.gz";
+      sha256 = "05whxy6081cygg8vpkm5m6glil3v9ardjjxlcmw5s0gba0m7jxni";
+    };
+  };
+  readme-renderer = super.buildPythonPackage {
+    name = "readme-renderer-17.2";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [bleach docutils pygments six];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/b6/a8/f27c15837fcbcb6110bd0f1dfa04b5fae658a1da3c07f186dba89818a613/readme_renderer-17.2.tar.gz";
+      sha256 = "1nm8rg4g27ca4arz8mr3bacp6i443hdmigwlnhdafqrsjr1b9slx";
     };
   };
   repoze.lru = super.buildPythonPackage {
@@ -332,6 +442,16 @@ self: super: {
     src = fetchurl {
       url = "https://pypi.python.org/packages/3c/68/1c10dd5c556872ceebe88483b0436140048d39de83a84a06a8baa8136f4f/waitress-1.1.0.tar.gz";
       sha256 = "1a85gyji0kajc3p0s1pwwfm06w4wfxjkvvl4rnrz3h164kbd6g6k";
+    };
+  };
+  webencodings = super.buildPythonPackage {
+    name = "webencodings-0.5.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/0b/02/ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47/webencodings-0.5.1.tar.gz";
+      sha256 = "08qrgrc4hrximb2gqnl69g01s93rhf2842jfxdjljc1dbwj1qsmk";
     };
   };
   zope.deprecation = super.buildPythonPackage {
