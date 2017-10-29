@@ -33,7 +33,7 @@ some packages in the requirements lists or to generate the nix expressions
 again.
 
 After running `nix-shell` in the root folder, the following tools are
-available::
+available:
 
 `pip-compile`
     Allows to "compile" a `requirements.in` into a `requirements.txt`,
