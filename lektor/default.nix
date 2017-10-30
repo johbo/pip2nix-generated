@@ -46,7 +46,7 @@ let
       src = homepage-src;
       buildInputs = [
         pkgs.s3cmd
-        self.Lektor
+        self.lektor
       ];
       passthru = {
         pythonPackages = myPythonPackages;

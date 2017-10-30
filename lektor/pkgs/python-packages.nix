@@ -4,86 +4,6 @@
 { pkgs, fetchurl, fetchgit, fetchhg }:
 
 self: super: {
-  Babel = super.buildPythonPackage {
-    name = "Babel-2.5.1";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [pytz];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/5a/22/63f1dbb8514bb7e0d0c8a85cc9b14506599a075e231985f98afd70430e1f/Babel-2.5.1.tar.gz";
-      sha256 = "04aqsbb2r3g4869mb2b2ls6yc81w5gaf4dp4pcj5bkfh2kvxl1v0";
-    };
-  };
-  EXIFRead = super.buildPythonPackage {
-    name = "EXIFRead-2.1.2";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/7b/cb/92b644626830115910cf2b36d3dfa600adbec86dff3207a7de3bfd6c6a60/ExifRead-2.1.2.tar.gz";
-      sha256 = "1b90jf6m9vxh9nanhpyvqdq7hmfx5iggw1l8kq10jrs6xgr49qkr";
-    };
-  };
-  Flask = super.buildPythonPackage {
-    name = "Flask-0.12.2";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [Werkzeug Jinja2 itsdangerous click];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/eb/12/1c7bd06fcbd08ba544f25bf2c6612e305a70ea51ca0eda8007344ec3f123/Flask-0.12.2.tar.gz";
-      sha256 = "1hfs2jr2m5lr51xd4gblb28rncd0xrpycz6c07cyqsbv4dhl9x29";
-    };
-  };
-  Jinja2 = super.buildPythonPackage {
-    name = "Jinja2-2.9.6";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [MarkupSafe];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/90/61/f820ff0076a2599dd39406dcb858ecb239438c02ce706c8e91131ab9c7f1/Jinja2-2.9.6.tar.gz";
-      sha256 = "1zzrkywhziqffrzks14kzixz7nd4yh2vc0fb04a68vfd2ai03anx";
-    };
-  };
-  Lektor = super.buildPythonPackage {
-    name = "Lektor-3.0.1";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [Jinja2 click watchdog mistune Flask EXIFRead inifile Babel setuptools pip requests];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/cb/f6/88c488a77a989054f73848cac8785ce03fba197d41399c083daae3ec5843/Lektor-3.0.1.tar.gz";
-      sha256 = "0ag4xl5ixpcpi6k9xlmyzki7frgz9szyscynqkjb5pmqnfwx23vz";
-    };
-  };
-  MarkupSafe = super.buildPythonPackage {
-    name = "MarkupSafe-1.0";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/4d/de/32d741db316d8fdb7680822dd37001ef7a448255de9699ab4bfcbdf4172b/MarkupSafe-1.0.tar.gz";
-      sha256 = "0rdn1s8x9ni7ss8rfiacj7x1085lx8mh2zdwqslnw8xc3l4nkgm6";
-    };
-  };
-  PyYAML = super.buildPythonPackage {
-    name = "PyYAML-3.12";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz";
-      sha256 = "1aqjl8dk9amd4zr99n8v2qxzgmr2hdvqfma4zh7a41rj6336c9sr";
-    };
-  };
-  Werkzeug = super.buildPythonPackage {
-    name = "Werkzeug-0.12.2";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/56/41/c095a77eb2dd69bf278dd664a97d3416af04e9ba1a00b8c138f772741d31/Werkzeug-0.12.2.tar.gz";
-      sha256 = "09mv4cya3lywkn4mi3qrqmjgwiw99kdk03dk912j8da6ny3pnflh";
-    };
-  };
   argh = super.buildPythonPackage {
     name = "argh-0.26.2";
     buildInputs = with self; [];
@@ -102,6 +22,16 @@ self: super: {
     src = fetchurl {
       url = "https://pypi.python.org/packages/31/53/8bca924b30cb79d6d70dbab6a99e8731d1e4dd3b090b7f3d8412a8d8ffbc/asn1crypto-0.23.0.tar.gz";
       sha256 = "0w2dv6ll5bsarkpn753c0bms1whkx4b3sk2qsrkb7syg549rhx08";
+    };
+  };
+  babel = super.buildPythonPackage {
+    name = "babel-2.5.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [pytz];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/5a/22/63f1dbb8514bb7e0d0c8a85cc9b14506599a075e231985f98afd70430e1f/Babel-2.5.1.tar.gz";
+      sha256 = "04aqsbb2r3g4869mb2b2ls6yc81w5gaf4dp4pcj5bkfh2kvxl1v0";
     };
   };
   certifi = super.buildPythonPackage {
@@ -154,6 +84,26 @@ self: super: {
       sha256 = "0fy7r5yb5dqak54nw6m8377i68ylnsx491crfl76l56zypj4iwyp";
     };
   };
+  exifread = super.buildPythonPackage {
+    name = "exifread-2.1.2";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/7b/cb/92b644626830115910cf2b36d3dfa600adbec86dff3207a7de3bfd6c6a60/ExifRead-2.1.2.tar.gz";
+      sha256 = "1b90jf6m9vxh9nanhpyvqdq7hmfx5iggw1l8kq10jrs6xgr49qkr";
+    };
+  };
+  flask = super.buildPythonPackage {
+    name = "flask-0.12.2";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [werkzeug jinja2 itsdangerous click];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/eb/12/1c7bd06fcbd08ba544f25bf2c6612e305a70ea51ca0eda8007344ec3f123/Flask-0.12.2.tar.gz";
+      sha256 = "1hfs2jr2m5lr51xd4gblb28rncd0xrpycz6c07cyqsbv4dhl9x29";
+    };
+  };
   idna = super.buildPythonPackage {
     name = "idna-2.6";
     buildInputs = with self; [];
@@ -182,6 +132,36 @@ self: super: {
     src = fetchurl {
       url = "https://pypi.python.org/packages/dc/b4/a60bcdba945c00f6d608d8975131ab3f25b22f2bcfe1dab221165194b2d4/itsdangerous-0.24.tar.gz";
       sha256 = "06856q6x675ly542ig0plbqcyab6ksfzijlyf1hzhgg3sgwgrcyb";
+    };
+  };
+  jinja2 = super.buildPythonPackage {
+    name = "jinja2-2.9.6";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [markupsafe];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/90/61/f820ff0076a2599dd39406dcb858ecb239438c02ce706c8e91131ab9c7f1/Jinja2-2.9.6.tar.gz";
+      sha256 = "1zzrkywhziqffrzks14kzixz7nd4yh2vc0fb04a68vfd2ai03anx";
+    };
+  };
+  lektor = super.buildPythonPackage {
+    name = "lektor-3.0.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [jinja2 click watchdog mistune flask exifread inifile babel setuptools pip requests];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/cb/f6/88c488a77a989054f73848cac8785ce03fba197d41399c083daae3ec5843/Lektor-3.0.1.tar.gz";
+      sha256 = "0ag4xl5ixpcpi6k9xlmyzki7frgz9szyscynqkjb5pmqnfwx23vz";
+    };
+  };
+  markupsafe = super.buildPythonPackage {
+    name = "markupsafe-1.0";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/4d/de/32d741db316d8fdb7680822dd37001ef7a448255de9699ab4bfcbdf4172b/MarkupSafe-1.0.tar.gz";
+      sha256 = "0rdn1s8x9ni7ss8rfiacj7x1085lx8mh2zdwqslnw8xc3l4nkgm6";
     };
   };
   mistune = super.buildPythonPackage {
@@ -214,16 +194,6 @@ self: super: {
       sha256 = "03clr9c1dih5n9c00c592zzvf6r1ffimywkaq9agcqdllzhl7wh9";
     };
   };
-  pyOpenSSL = super.buildPythonPackage {
-    name = "pyOpenSSL-17.3.0";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [cryptography six];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/ee/6a/cd78737dd990297205943cc4dcad3d3c502807fd2c5b18c5f33dc90ca214/pyOpenSSL-17.3.0.tar.gz";
-      sha256 = "0xkc1wfnpg6abzllivg3ylhc63npjdy1v81f4kc08bm8cj80nqr9";
-    };
-  };
   pycparser = super.buildPythonPackage {
     name = "pycparser-2.18";
     buildInputs = with self; [];
@@ -232,6 +202,16 @@ self: super: {
     src = fetchurl {
       url = "https://pypi.python.org/packages/8c/2d/aad7f16146f4197a11f8e91fb81df177adcc2073d36a17b1491fd09df6ed/pycparser-2.18.tar.gz";
       sha256 = "09mjyw82ibqzl449g7swy8bfxnfpmas0815d2rkdjlcqw81wma4r";
+    };
+  };
+  pyopenssl = super.buildPythonPackage {
+    name = "pyopenssl-17.3.0";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [cryptography six];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/ee/6a/cd78737dd990297205943cc4dcad3d3c502807fd2c5b18c5f33dc90ca214/pyOpenSSL-17.3.0.tar.gz";
+      sha256 = "0xkc1wfnpg6abzllivg3ylhc63npjdy1v81f4kc08bm8cj80nqr9";
     };
   };
   pytz = super.buildPythonPackage {
@@ -244,11 +224,21 @@ self: super: {
       sha256 = "1dw5l527vcafvdqq4wadwl7ikhb2sssz0v0cssibh8890kyczr7s";
     };
   };
+  pyyaml = super.buildPythonPackage {
+    name = "pyyaml-3.12";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz";
+      sha256 = "1aqjl8dk9amd4zr99n8v2qxzgmr2hdvqfma4zh7a41rj6336c9sr";
+    };
+  };
   requests = super.buildPythonPackage {
     name = "requests-2.18.4";
     buildInputs = with self; [];
     doCheck = false;
-    propagatedBuildInputs = with self; [chardet idna urllib3 certifi pyOpenSSL cryptography idna];
+    propagatedBuildInputs = with self; [chardet idna urllib3 certifi pyopenssl cryptography idna];
     src = fetchurl {
       url = "https://pypi.python.org/packages/b0/e1/eab4fc3752e3d240468a8c0b284607899d2fbfb236a56b7377a329aa8d09/requests-2.18.4.tar.gz";
       sha256 = "0zi3v9nsmv9j27d0c0m1dvqyvaxz53g8m0aa1h3qanxs4irkwi4w";
@@ -288,10 +278,20 @@ self: super: {
     name = "watchdog-0.8.3";
     buildInputs = with self; [];
     doCheck = false;
-    propagatedBuildInputs = with self; [PyYAML argh pathtools];
+    propagatedBuildInputs = with self; [pyyaml argh pathtools];
     src = fetchurl {
       url = "https://pypi.python.org/packages/54/7d/c7c0ad1e32b9f132075967fc353a244eb2b375a3d2f5b0ce612fd96e107e/watchdog-0.8.3.tar.gz";
       sha256 = "0qj1vqszxwfx6d1s66s96jmfmy2j94bywxiqdydh6ikpvcm8hrby";
+    };
+  };
+  werkzeug = super.buildPythonPackage {
+    name = "werkzeug-0.12.2";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/56/41/c095a77eb2dd69bf278dd664a97d3416af04e9ba1a00b8c138f772741d31/Werkzeug-0.12.2.tar.gz";
+      sha256 = "09mv4cya3lywkn4mi3qrqmjgwiw99kdk03dk912j8da6ny3pnflh";
     };
   };
 

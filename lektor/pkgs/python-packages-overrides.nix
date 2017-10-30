@@ -24,14 +24,14 @@ self: super: {
 
   });
 
-  Lektor = super.Lektor.override (attrs: {
+  lektor = super.lektor.override (attrs: {
     # TODO: johbo: Workaround issues in watchdog
     makeWrapperArgs = pkgs.stdenv.lib.optionals pkgs.stdenv.isDarwin [
       "--set DYLD_FRAMEWORK_PATH /System/Library/Frameworks"
     ];
   });
 
-  PyYAML = super.PyYAML.override (attrs: {
+  pyyaml = super.pyyaml.override (attrs: {
     buildInputs = with self; [ pkgs.pyrex wheel ];
     propagatedBuildInputs = with self; [ pkgs.libyaml ];
   });
