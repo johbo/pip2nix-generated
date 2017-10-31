@@ -48,6 +48,18 @@ let
           devpi-client
           devpi-web
       ];
+      src = ./.;
+
+      installPhase = with self; ''
+        echo "Linking to devpi"
+        mkdir -p $out
+        pushd $out
+        ln -s ${devpi-server} devpi-server
+        ln -s ${devpi-client} devpi-client
+        ln -s ${devpi-web} devpi-web
+        popd
+      '';
+
     };
   };
 
