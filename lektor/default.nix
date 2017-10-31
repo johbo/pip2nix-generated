@@ -41,7 +41,7 @@ let
   };
 
   pythonPackagesLocalOverrides = self: super: {
-    homepage = super.buildPythonPackage {
+    homepage = pkgs.stdenv.mkDerivation {
       name = "homepage-1.0";
       src = homepage-src;
       buildInputs = [
@@ -51,6 +51,16 @@ let
       passthru = {
         pythonPackages = myPythonPackages;
       };
+
+      # TODO: Use a proper env method instead
+      installPhase = with self; ''
+        echo "Linking to lektor"
+        mkdir -p $out
+        pushd $out
+        ln -s ${lektor} devpi-server
+        ln -s ${pkgs.s3cmd} s3cmd
+        popd
+      '';
     };
   };
 
