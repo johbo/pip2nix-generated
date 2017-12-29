@@ -40,6 +40,13 @@ let
 
   pythonPackagesLocalOverrides = self: super: {
     matrix-synapse = super.matrix-synapse.override (attrs: {
+
+      postInstall = ''
+        mkdir -p $out/bin
+        cp synapse/app/homeserver.py $out/bin/homeserver
+        chmod a+x $out/bin/homeserver
+      '';
+
     });
   };
 
