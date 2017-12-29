@@ -1,1 +1,2 @@
--e .
+# https://github.com/matrix-org/synapse/archive/v0.25.1.tar.gz#egg=matrix-synapse
+-e git://github.com/matrix-org/synapse.git@v0.25.1#egg=matrix-synapse
