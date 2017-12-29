@@ -1,0 +1,11 @@
+
+# Some packages are not available as source distributions
+# Using the constraints mechanism allows to inject working URLs.
+
+https://github.com/matrix-org/python-canonicaljson/archive/92e2c06871cc275c2a8b8e3e899141a212aae0e8.tar.gz#egg=canonicaljson==1.0.0
+
+https://github.com/matrix-org/pymacaroons/archive/3068b8537eb3aa85abbb3cc5861289af3d45fdff.tar.gz#egg=pymacaroons-pynacl==0.9.3
+
+https://github.com/matrix-org/python-signedjson/archive/3ee65545a4c92ed7719f3c9e9ad53aead8461411.tar.gz#egg=signedjson==1.0.0
+
+https://github.com/matrix-org/python-unpaddedbase64/archive/c804b5753f4805cf3d129fa4e7febef5c032b6ca.tar.gz#egg=unpaddedbase64==1.1.0
