@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
-# -e file:///Users/johannes/wo/synapse
+-e git+git://github.com/matrix-org/synapse.git@v0.25.1#egg=matrix-synapse
 affinity==0.1.0
 asn1crypto==0.24.0        # via cryptography
 attrs==17.3.0             # via automat, service-identity
@@ -20,11 +20,14 @@ constantly==15.1.0        # via twisted
 cryptography==2.1.4       # via pyopenssl
 daemonize==2.4.7
 decorator==4.1.2          # via pysaml2
+enum34==1.1.6             # via cryptography
 frozendict==1.2           # via canonicaljson
+functools32==3.2.3.post2  # via jsonschema
 html5lib==1.0.1           # via bleach
 hyperlink==17.3.1         # via twisted
 idna==2.6                 # via cryptography, requests
 incremental==17.5.0       # via twisted
+ipaddress==1.0.19         # via cryptography
 jinja2==2.10
 jsonschema==2.6.0
 ldap3==2.4                # via matrix-synapse-ldap3
