@@ -289,7 +289,10 @@ self: super: {
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [matrix-synapse-ldap3 msgpack-python daemonize frozendict psutil pyopenssl pydenticon pymacaroons-pynacl service-identity signedjson pyyaml twisted bleach unpaddedbase64 pillow pyasn1 ujson pynacl netaddr jsonschema blist canonicaljson matrix-angular-sdk jinja2 affinity pysaml2 bcrypt phonenumbers];
-    src = ./.;
+    src = fetchurl {
+      url = "https://github.com/matrix-org/synapse/archive/v0.25.1.tar.gz";
+      sha256 = "1sx3b7mbvdic538lhaqz4pymxdhbz0c192p8sysd6ya8jy85v93r";
+    };
   };
   matrix-synapse-ldap3 = super.buildPythonPackage {
     name = "matrix-synapse-ldap3-0.1.3";
