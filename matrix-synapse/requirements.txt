@@ -4,7 +4,8 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
--e git+git://github.com/matrix-org/synapse.git@v0.25.1#egg=matrix-synapse
+# -e git+git://github.com/matrix-org/synapse.git@v0.25.1#egg=matrix-synapse
+https://github.com/matrix-org/synapse/archive/v0.25.1.tar.gz#egg=matrix-synapse
 affinity==0.1.0
 asn1crypto==0.24.0        # via cryptography
 attrs==17.3.0             # via automat, service-identity
