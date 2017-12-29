@@ -29,8 +29,6 @@ let
       !elem ext ["egg-info" "pyc"] &&
       !startsWith "result" path;
 
-  synapse-src = builtins.filterSource src-filter ./.;
-
   pythonPackagesGenerated = import ./python-packages.nix {
     inherit pkgs;
     inherit (pkgs) fetchurl fetchgit fetchhg;
@@ -41,8 +39,7 @@ let
   };
 
   pythonPackagesLocalOverrides = self: super: {
-    synapse = super.synapse.override (attrs: {
-      src = synapse-src;
+    matrix-synapse = super.matrix-synapse.override (attrs: {
     });
   };
 
@@ -53,4 +50,4 @@ let
     (extends pythonPackagesGenerated
              basePythonPackagesUnfix))));
 
-in myPythonPackages.synapse
+in myPythonPackages.matrix-synapse
